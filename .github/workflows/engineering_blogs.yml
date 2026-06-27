@@ -4,7 +4,7 @@ name: Generate engineering_blogs.opml file
 # Events upon which Github WorkFlow gets triggered
 on: [push, pull_request]
 
-#Create jobs
+# Create jobs
 jobs:
   generate:
     name: Generate engineering_blogs.opml
@@ -14,9 +14,9 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Ruby Setup
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: '2.5'
+          ruby-version: '2.7'
 
       - name: Install pkgs
         run: |
@@ -31,4 +31,3 @@ jobs:
         with:
           commit_message: Commit by Github WorkFlow
           file_pattern: engineering_blogs.opml
-
